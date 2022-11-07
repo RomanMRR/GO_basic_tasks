@@ -14,7 +14,7 @@ func ReverseString(str []rune) string {
 
 	right := len(str) - 1 //Будем идти с конца строки
 
-	for right >= 0 { //ПОка не дошли до конца
+	for right >= 0 { //Пока не дошли до конца
 		sb.WriteString(string(str[right])) //Получаем символы строки с конца
 		right--
 	}

@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// СОбственная реализация Sleep
+// Собственная реализация Sleep
 func Sleep(duration time.Duration) {
 	<-time.After(duration) //Данная функция ждёт столько времени, сколько ей указали
 }
