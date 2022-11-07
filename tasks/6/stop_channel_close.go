@@ -23,7 +23,7 @@ func Worker(channel chan string) {
 }
 
 func main() {
-	channel := make(chan string) //Создаём канал, при закрытии котого горутина будет останавливаться
+	channel := make(chan string) //Создаём канал, при закрытии которого горутина будет останавливаться
 
 	go Worker(channel) //Создаём горутину
 	channel <- "Working!"

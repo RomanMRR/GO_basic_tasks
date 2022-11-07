@@ -13,9 +13,8 @@ func Worker(channel chan bool) {
 	for range channel { //Как только канал закроется, горутина завершит работу
 		fmt.Println("I am working!")
 	}
-	for {
-		fmt.Println("Am I working?")
-	}
+
+	fmt.Println("I finish")
 
 }
 
@@ -27,5 +26,6 @@ func main() {
 	time.Sleep(1 * time.Second) //Имитируем работу горутины
 	//Записываем в канал признак остановки
 	close(channel)
+	time.Sleep(1 * time.Second) //Для проверки, что горутина завершила работу
 
 }
