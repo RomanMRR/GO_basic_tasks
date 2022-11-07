@@ -33,6 +33,6 @@ func main() {
 	MyMap.Range(func(key, value any) bool { //Итерируемся по map
 		fmt.Println("Key is ", key, "value is ", value) //В этом методе передаётся функция, которая выполняется для
 		//каждого элемента map
-		return true //Выводи true, если будет false, то Range завершится
+		return true //Возвращаем true, если будет false, то Range завершится
 	})
 }
