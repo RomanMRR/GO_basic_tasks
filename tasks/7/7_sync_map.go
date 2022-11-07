@@ -11,26 +11,6 @@ import (
 	"sync"
 )
 
-// Стркуктура с мьютексом внутри и map, что позволит реализовать безопасную запись данных в map
-type SafeMap struct {
-	mx sync.Mutex //По-умолчанию unlock
-	m  map[string]int
-}
-
-// Конструктор
-func NewSafeMap() *SafeMap {
-	return &SafeMap{
-		m: make(map[string]int),
-	}
-}
-
-// Функция для конкурентной записи данных в map
-func (c *SafeMap) Write(key string, value int) {
-	c.mx.Lock() //Блокируем операцию на чтения и запись для других потоков
-	c.m[key] = value
-	c.mx.Unlock() //Разблокируем
-}
-
 func main() {
 	var MyMap sync.Map     //Используем особую структуру - потокобезопасный Map
 	var wg sync.WaitGroup  //Для синхронизации потоков
