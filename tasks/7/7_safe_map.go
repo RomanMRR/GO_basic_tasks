@@ -42,7 +42,6 @@ func main() {
 			sb.WriteString("Key ")
 			sb.WriteString(strconv.Itoa(i)) //Преобразуем число в string и соединяем с Key
 			MyMap.Write(sb.String(), i)     //Записываем результат в map
-			MyMap.Write("Hello", i)         //Записываем результат в map
 			sb.Reset()                      //Сбрасываем получившуюся строку
 			wg.Done()
 		}(i)
