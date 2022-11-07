@@ -22,7 +22,7 @@ func Worker(ctx context.Context) {
 	}
 }
 
-func main() { //Создаём канал, который будем служить признаком остановки горутины
+func main() {
 	ctx, cancel := context.WithCancel(context.Background()) //Создаём контекст с функцией отмены
 
 	go Worker(ctx) //Создаём горутину

@@ -22,7 +22,7 @@ func Worker(ctx context.Context) {
 	}
 }
 
-func main() { //Создаём канал, который будем служить признаком остановки горутины
+func main() {
 	ctx, _ := context.WithTimeout(context.Background(), 1*time.Second) //Создаём контекст продолжительностью 3 секунды
 
 	go Worker(ctx) //Создаём горутину
