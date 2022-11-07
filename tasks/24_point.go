@@ -9,7 +9,7 @@ import (
 	"math"
 )
 
-// Стркуктура с мьютексом внутри и map, что позволит реализовать безопасную запись данных в map
+// Стркуктура с координатами точки
 type Point struct {
 	x, y float64
 }
@@ -22,7 +22,7 @@ func NewPoint(x, y float64) *Point {
 	}
 }
 
-// Функция для нахождения расстояния между двумя точками
+// Функция для нахождения расстояния между двумя точками по формуле
 func GetDistance(point1, point2 *Point) float64 {
 	return math.Sqrt(math.Pow(point1.x-point2.x, 2) + math.Pow(point1.y-point2.y, 2))
 }
